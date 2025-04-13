@@ -1,16 +1,14 @@
-def turkish_sort(word_list):
-    """Sort words according to Turkish alphabet."""
-    # Turkish alphabet order
-    turkish_alphabet = "abcçdefgğhıijklmnoöprsştuüvyz"
+def sort(word_list):
+    """Sort words according to given alphabet."""
+    alphabet = "abcçdefgğhıijklmnoöprsştuüvyz"
     
-    def get_turkish_order(char):
+    def get_order(char):
         char = char.lower()
-        if char in turkish_alphabet:
-            return turkish_alphabet.index(char)
-        return len(turkish_alphabet)  # Characters not in Turkish alphabet go to the end
+        if char in alphabet:
+            return alphabet.index(char)
+        return len(alphabet)  
     
-    # Sort the words by comparing each character according to Turkish alphabet
-    return sorted(word_list, key=lambda word: [get_turkish_order(c) for c in word])
+    return sorted(word_list, key=lambda word: [get_order(c) for c in word])
 
 def read_words_file():
     """Read words from the file and return a dictionary."""
@@ -29,8 +27,7 @@ def read_words_file():
         return {}
 
 def write_words_file(words_dict):
-    """Write words to the file in Turkish alphabetical order."""
-    sorted_words = turkish_sort(list(words_dict.keys()))
+    sorted_words = sort(list(words_dict.keys()))
     
     with open("words.txt", "w", encoding="utf-8") as file:
         for word in sorted_words:
@@ -111,7 +108,7 @@ def delete_word_mode():
 
 def main():
     """Main function to run the program."""
-    print("Welcome to the Turkish Word Dictionary Program!")
+    print("Welcome to the Dictionary Program!")
     
     while True:
         print("\nSelect a mode:")
@@ -132,7 +129,7 @@ def main():
         elif mode == 'e':
             delete_word_mode()
         elif mode == 'q':
-            print("Thank you for using the Turkish Word Dictionary Program. Goodbye!")
+            print("Thank you for using the Dictionary Program. Goodbye!")
             break
         else:
             print("Invalid choice. Please try again.")
