@@ -23,15 +23,15 @@ All data is saved to a simple `words.txt` file in the project directory. No exte
 
 By default, Python’s sort won't work well for special characters or non-English alphabets. This tool includes a custom sort function that lets you define the order of characters (e.g., for Turkish, German, Spanish, etc.). You can easily tweak the sort logic to match your language of choice.
 
-
-
----------------------------
+__________________________________________________________________________________________________
 This is the commands that you can use. Entering " "  (a space) will jump you back to the main menu.
+```
 Commands:
 
-a  - add word
-d  - define word
-s  - search word
-e  - delete word
-g  - random word
-q  - quit
+a - add word
+d - define word
+s - search word
+e - delete word
+g - random word
+q - quit
+```
